@@ -19,40 +19,44 @@ export default function HomePage() {
           </div>
           <ul>
             <li className="drop-menu">
-              <ul className={`drop-menu-navigation`}>
-                <li>
-                  <Link href={""}>
-                    <div className="menu-item">
-                      <span className="material-symbols-outlined">list</span>
-                      <p>Objetivos</p>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link href={""}>
-                    <div className="menu-item">
-                      <span className="material-symbols-outlined">folder</span>
-                      <p>Projetos</p>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link href={""}>
-                    <div className="menu-item">
-                      <span className="material-symbols-outlined">people</span>
-                      <p>Equipe</p>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link href={""}>
-                    <div className="menu-item">
-                      <span className="material-symbols-outlined">co_present</span>
-                      <p>Participações</p>
-                    </div>
-                  </Link>
-                </li>
-              </ul>
+              {dropMenuOpen ? (
+                <ul className={`drop-menu-navigation`}>
+                  <li>
+                    <Link href={""}>
+                      <div className="menu-item">
+                        <span className="material-symbols-outlined">list</span>
+                        <p>Objetivos</p>
+                      </div>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={""}>
+                      <div className="menu-item">
+                        <span className="material-symbols-outlined">folder</span>
+                        <p>Projetos</p>
+                      </div>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={""}>
+                      <div className="menu-item">
+                        <span className="material-symbols-outlined">people</span>
+                        <p>Equipe</p>
+                      </div>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={""}>
+                      <div className="menu-item">
+                        <span className="material-symbols-outlined">co_present</span>
+                        <p>Participações</p>
+                      </div>
+                    </Link>
+                  </li>
+                </ul>
+              ) : (
+                
+              )}
             </li>
             <li>
               <Link href={"./cadastroIdeia"}>
