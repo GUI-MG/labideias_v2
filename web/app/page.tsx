@@ -4,6 +4,7 @@ import Link from "next/link";
 import "./style.scss";
 import Image from "next/image";
 import { useState } from "react";
+import { PrimaryButton } from "@/components/PrimaryButton";
 
 export default function HomePage() {
 
@@ -55,7 +56,11 @@ export default function HomePage() {
                   </li>
                 </ul>
               ) : (
-                
+                <PrimaryButton 
+                  isDropMenu
+                  insideText="Navegação"
+                  icon={<span className="material-symbols-outlined">arrow_drop_down</span>}
+                />
               )}
             </li>
             <li>

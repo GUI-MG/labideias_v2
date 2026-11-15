@@ -5,6 +5,7 @@ type primaryButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     insideText: string,
     icon?: React.ReactNode,
     isAsync?: boolean,
+    isDropMenu?: boolean,
 }
 
 export const PrimaryButton = (props: primaryButtonProps) => {
@@ -13,6 +14,7 @@ export const PrimaryButton = (props: primaryButtonProps) => {
 
     return (
         <button
+            type="button"
             className={`primaryButton ${loading ? "loading" : ""}`}
             disabled={loading}
             
@@ -27,8 +29,21 @@ export const PrimaryButton = (props: primaryButtonProps) => {
                 setLoading(false);
             }}
         >
-            {props.icon}
-            {props.insideText}
+            {props.isDropMenu ? 
+                (
+                    <>
+                    {props.insideText}
+                    {props.icon}
+                    </>
+                )
+                :
+                (
+                    <>
+                    {props.icon}
+                    {props.insideText}
+                    </>
+                )
+            }
         </button>
     )
 }

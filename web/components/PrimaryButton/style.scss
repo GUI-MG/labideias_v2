@@ -1,0 +1,13 @@
+@use "../../config/theme.scss" as *;
+
+.primaryButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    min-width: 320px;
+    border-radius: 10px;
+    background-color: $primaryColor;
+    padding: 8px 6px;
+    border: 1px solid $borderColor;
+}
