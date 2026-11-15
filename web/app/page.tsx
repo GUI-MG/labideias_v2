@@ -1,8 +1,14 @@
+'use client'
+
 import Link from "next/link";
 import "./style.scss";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function HomePage() {
+
+  const [ dropMenuOpen, setDropMenuOpen ] = useState(false);
+
   return (
     <section className="home-page">
       <header className="home-page-header">
@@ -12,41 +18,45 @@ export default function HomePage() {
             <Image src={"/web/public/ifrs-logo.svg"} alt="IFRS Logo" width={40} height={40}></Image>
           </div>
           <ul>
-            <li>
-              <Link href={""}>
-                <div className="objectives">
-                  <span className="material-symbols-outlined">list</span>
-                  <p>Objetivos</p>
-                </div>
-              </Link>
+            <li className="drop-menu">
+              <ul className={`drop-menu-navigation`}>
+                <li>
+                  <Link href={""}>
+                    <div className="menu-item">
+                      <span className="material-symbols-outlined">list</span>
+                      <p>Objetivos</p>
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={""}>
+                    <div className="menu-item">
+                      <span className="material-symbols-outlined">folder</span>
+                      <p>Projetos</p>
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={""}>
+                    <div className="menu-item">
+                      <span className="material-symbols-outlined">people</span>
+                      <p>Equipe</p>
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={""}>
+                    <div className="menu-item">
+                      <span className="material-symbols-outlined">co_present</span>
+                      <p>Participações</p>
+                    </div>
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li>
-              <Link href={""}>
-                <div>
-                  <span className="material-symbols-outlined">folder</span>
-                  <p>Projetos</p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link href={""}>
-                <div>
-                  <span className="material-symbols-outlined">people</span>
-                  <p>Equipe</p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link href={""}>
-                <div>
-                  <span className="material-symbols-outlined">co_present</span>
-                  <p>Participações</p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link href={""}>
-                <div>
+              <Link href={"./cadastroIdeia"}>
+                <div className="menu-item">
                   <span className="material-symbols-outlined">edit</span>
                   <p>Cadastrar Ideia</p>
                 </div>
