@@ -18,9 +18,16 @@ export default function HomePage() {
             <Image src={"/web/public/logo.png"} alt="Laboratório de Ideias Logo" width={40} height={40}></Image>
             <Image src={"/web/public/ifrs-logo.svg"} alt="IFRS Logo" width={40} height={40}></Image>
           </div>
-          <ul>
+          <ul className="nav-list">
             <li className="drop-menu">
-              {dropMenuOpen ? (
+              <PrimaryButton 
+                isDropMenu
+                insideText="Navegação"
+                icon={<span className="material-symbols-outlined">arrow_drop_down</span>}
+                onClick={() => setDropMenuOpen(true)}
+                isNav
+              />
+              {dropMenuOpen && (
                 <ul className={`drop-menu-navigation`}>
                   <li>
                     <Link href={""}>
@@ -55,20 +62,15 @@ export default function HomePage() {
                     </Link>
                   </li>
                 </ul>
-              ) : (
-                <PrimaryButton 
-                  isDropMenu
-                  insideText="Navegação"
-                  icon={<span className="material-symbols-outlined">arrow_drop_down</span>}
-                />
               )}
             </li>
             <li>
               <Link href={"./cadastroIdeia"}>
-                <div className="menu-item">
-                  <span className="material-symbols-outlined">edit</span>
-                  <p>Cadastrar Ideia</p>
-                </div>
+                <PrimaryButton
+                  insideText="Cadastrar ideia"
+                  icon={<span className="material-symbols-outlined">edit</span>}
+                  isNav
+                />
               </Link>
             </li>
           </ul>

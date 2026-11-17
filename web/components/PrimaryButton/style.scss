@@ -5,9 +5,36 @@
     flex-direction: row;
     align-items: center;
     justify-content: start;
-    min-width: 320px;
+    min-width: 120px;
     border-radius: 10px;
     background-color: $primaryColor;
     padding: 8px 6px;
     border: 1px solid $borderColor;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+
+    &.nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        min-width: 120px;
+        border-radius: 10px;
+        background-color: $primaryColorVariant;
+        padding: 8px 6px;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+        border: none;
+
+        &:hover {
+            transform: translateY(-1px);
+            background-color: $hoverColor;
+            // border: 1px solid $borderColor;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+        background-color: $hoverColor;
+    }
 }

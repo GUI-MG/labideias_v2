@@ -6,6 +6,7 @@ type primaryButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     icon?: React.ReactNode,
     isAsync?: boolean,
     isDropMenu?: boolean,
+    isNav?: boolean;
 }
 
 export const PrimaryButton = (props: primaryButtonProps) => {
@@ -15,7 +16,7 @@ export const PrimaryButton = (props: primaryButtonProps) => {
     return (
         <button
             type="button"
-            className={`primaryButton ${loading ? "loading" : ""}`}
+            className={`primaryButton ${props.isNav ? "nav" : ""}`}
             disabled={loading}
             
             onClick={async () => {

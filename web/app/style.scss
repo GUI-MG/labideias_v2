@@ -12,6 +12,8 @@
         flex-direction: column;
         width: 100%;
         min-height: 120px;
+        background-color: $primaryColorVariant;
+        box-shadow: 2px 16px 8px rgba($color: #000000, $alpha: 0.12);
 
         &-nav {
             display: flex;
@@ -19,25 +21,53 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            padding: 10px;
+            padding: 10px 30px;
 
-            ul {
+            .images {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: start;
+                gap: 8px;
+                height: 100%;
+            }
+
+            .nav-list {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: end;
                 gap: 10px;
 
-                .menu-item {
+                .drop-menu {
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
                     align-items: center;
                     justify-content: start;
-                    gap: 5px;
+                    width: fit-content;
+                    padding: 10px;
+                    position: relative;
 
-                    &:hover {
-                        transform: translateY(-1px);
-                        
+                    .drop-menu-navigation {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: start;
+                        width: fit-content;
+                        padding: 8px 6px;
+
+                        .menu-item {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: start;
+                            gap: 5px;
+    
+                            &:hover {
+                                transform: translateY(-1px);
+                                
+                            }
+                        }
                     }
                 }
             }
